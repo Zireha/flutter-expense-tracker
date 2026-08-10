@@ -1,0 +1,24 @@
+name: expense_tracker
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^8.2.1
+  google_sign_in: ^7.2.0
+  riverpod: ^3.3.2
+  supabase_flutter: ^2.16.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  change_app_package_name: ^1.5.0
+
+flutter:
+  uses-material-design: true
