@@ -1,5 +1,6 @@
-import 'package:expense_tracker/features/home/screen/home_screen.dart';
+import 'package:expense_tracker/features/shell/shell.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -9,7 +10,7 @@ void main() {
 
   // );
 
-  runApp(const MainApp());
+  runApp(const ProviderScope(child: MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -17,9 +18,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
-      debugShowCheckedModeBanner: false,
-    );
+    return const MaterialApp(home: Shell(), debugShowCheckedModeBanner: false);
   }
 }

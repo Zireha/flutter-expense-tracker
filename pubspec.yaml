@@ -11,7 +11,8 @@ dependencies:
     sdk: flutter
   google_fonts: ^8.2.1
   google_sign_in: ^7.2.0
-  riverpod: ^3.3.2
+  pixelarticons: ^0.4.0
+  flutter_riverpod: ^3.4.2
   supabase_flutter: ^2.16.0
 
 dev_dependencies:
