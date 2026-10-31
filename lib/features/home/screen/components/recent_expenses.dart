@@ -1,5 +1,6 @@
 import 'package:expense_tracker/features/home/screen/components/cards.dart';
 import 'package:expense_tracker/features/home/screen/components/expenses_card.dart';
+import 'package:expense_tracker/themes/color_theme.dart';
 import 'package:expense_tracker/themes/fonts.dart';
 import 'package:flutter/material.dart';
 
@@ -8,9 +9,9 @@ class RecentExpenses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final fonts = Fonts();
-    
+    final color = ColorTheme();
+
     return Column(
       spacing: 12,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,7 +19,7 @@ class RecentExpenses extends StatelessWidget {
         Text(
           "Recent Expenses",
           style: fonts.secondaryHeading2.copyWith(
-            color: Colors.white,
+            color: color.secondaryColor,
             fontWeight: FontWeight.w800,
           ),
         ),
@@ -27,7 +28,7 @@ class RecentExpenses extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             itemCount: 3,
             separatorBuilder: (_, _) => Divider(
-              color: Colors.white60,
+              color: color.altTextColor,
               height: 32,
               indent: 20,
               endIndent: 20,
@@ -41,7 +42,7 @@ class RecentExpenses extends StatelessWidget {
                     child: Icon(
                       Icons.fastfood_outlined,
                       size: 48,
-                      color: Colors.white,
+                      color: color.secondaryColor,
                     ),
                   ),
                   Column(
@@ -51,7 +52,7 @@ class RecentExpenses extends StatelessWidget {
                       Text(
                         "Chicken Noodle",
                         style: fonts.primaryHeading3.copyWith(
-                          color: Colors.white,
+                          color: color.secondaryColor,
                         ),
                       ),
                       Text(
@@ -69,13 +70,13 @@ class RecentExpenses extends StatelessWidget {
                       Text(
                         "12.30",
                         style: fonts.secondaryTitle.copyWith(
-                          color: Colors.white70,
+                          color: color.altTextColor,
                         ),
                       ),
                       Text(
                         "Rp15.000",
                         style: fonts.primaryHeading3.copyWith(
-                          color: Colors.white,
+                          color: color.secondaryColor,
                         ),
                       ),
                     ],

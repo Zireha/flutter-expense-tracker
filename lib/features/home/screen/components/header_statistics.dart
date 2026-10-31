@@ -1,4 +1,5 @@
 import 'package:expense_tracker/features/home/screen/components/cards.dart';
+import 'package:expense_tracker/themes/color_theme.dart';
 import 'package:expense_tracker/themes/fonts.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ class HeaderStatistics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fonts = Fonts();
+    final color = ColorTheme();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 12,
@@ -17,11 +19,14 @@ class HeaderStatistics extends StatelessWidget {
           children: [
             Text(
               "Good Afternoon",
-              style: fonts.secondarySubtitle.copyWith(color: Colors.white),
+              style: fonts.secondarySubtitle.copyWith(color: color.secondaryColor),
             ),
             Text(
               "Adam Brooks",
-              style: fonts.primaryHeading3.copyWith(color: Colors.white, fontWeight: FontWeight.w800),
+              style: fonts.primaryHeading3.copyWith(
+                color: color.secondaryColor,
+                fontWeight: FontWeight.w800,
+              ),
             ),
           ],
         ),
@@ -36,14 +41,14 @@ class HeaderStatistics extends StatelessWidget {
                   Text(
                     "This month's total expense",
                     style: fonts.secondaryTitle.copyWith(
-                      color: Colors.white60,
+                      color: color.altTextColor,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
                   Text(
                     "Rp53.000",
                     style: fonts.primaryHeading1.copyWith(
-                      color: Colors.white,
+                      color: color.secondaryColor,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
@@ -53,7 +58,7 @@ class HeaderStatistics extends StatelessWidget {
                 icon: Icon(
                   Icons.keyboard_control,
                   size: 32,
-                  color: Colors.white,
+                  color: color.secondaryColor,
                 ),
                 onPressed: () {},
               ),
@@ -73,13 +78,13 @@ class HeaderStatistics extends StatelessWidget {
                     Text(
                       "Target Expenses",
                       style: fonts.secondarySubtitle.copyWith(
-                        color: Colors.white60,
+                        color: color.altTextColor,
                       ),
                     ),
                     Text(
                       "Rp50.000/Day",
                       style: fonts.primarySubtitle.copyWith(
-                        color: Colors.white,
+                        color: color.secondaryColor,
                       ),
                     ),
                   ],
@@ -95,13 +100,13 @@ class HeaderStatistics extends StatelessWidget {
                     Text(
                       "Today Spent",
                       style: fonts.secondarySubtitle.copyWith(
-                        color: Colors.white60,
+                        color: color.altTextColor,
                       ),
                     ),
                     Text(
                       "Rp50.000",
                       style: fonts.primarySubtitle.copyWith(
-                        color: Colors.white,
+                        color: color.secondaryColor,
                       ),
                     ),
                   ],

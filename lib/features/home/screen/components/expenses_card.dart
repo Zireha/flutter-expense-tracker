@@ -1,7 +1,4 @@
-import 'package:expense_tracker/features/home/screen/components/cards.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../themes/fonts.dart';
 
 class ExpensesCard extends StatelessWidget {
   final List<Widget> children;
@@ -10,7 +7,6 @@ class ExpensesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fonts = Fonts();
     
     return Row(
       mainAxisAlignment: (spaceBetween != null && spaceBetween == true)
