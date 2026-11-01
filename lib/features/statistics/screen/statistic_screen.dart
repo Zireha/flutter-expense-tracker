@@ -1,4 +1,5 @@
-import 'package:expense_tracker/features/statistics/components/month_dropdown.dart';
+import 'package:expense_tracker/core/utils/utils.dart';
+import 'package:expense_tracker/features/global_components/custom_dropdown.dart';
 import 'package:expense_tracker/themes/color_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +8,7 @@ class StatisticScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = ColorTheme();
+    final util = Utils();
 
     return Scaffold(
       backgroundColor: color.primaryColor,
@@ -17,7 +19,20 @@ class StatisticScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             spacing: 12,
-            children: [MonthDropdown(isCenter: true)],
+            children: [
+              // Month Dropdown
+              Row(
+                children: [
+                  Expanded(flex: 2, child: SizedBox()),
+                  Expanded(flex: 1, child: CustomDropdown(entries: util.month)),
+                  Expanded(flex: 2, child: SizedBox()),
+                ],
+              ),
+
+              // Pie Chart
+              // Total Expense
+              // Pie Chart statistic detail
+            ],
           ),
         ),
       ),

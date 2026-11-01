@@ -1,5 +1,6 @@
 // import 'package:expense_tracker/features/home/screen/home_screen.dart';
 import 'package:expense_tracker/features/home/screen/home_screen.dart';
+import 'package:expense_tracker/features/statistics/screen/statistic_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -12,6 +13,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomeScreen(), debugShowCheckedModeBanner: false);
+    return const MaterialApp(home: StatisticScreen(), debugShowCheckedModeBanner: false);
   }
 }

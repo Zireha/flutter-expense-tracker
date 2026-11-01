@@ -66,6 +66,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
           color: color.secondaryColor,
         ),
         inputDecorationTheme: InputDecorationTheme(
+          
           iconColor: color.secondaryColor,
           filled: true,
           fillColor: color.primaryColor,
@@ -84,6 +85,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
           });
         },
         menuStyle: MenuStyle(
+          alignment: Alignment.center,
           backgroundColor: WidgetStateColor.resolveWith(
             (_) => color.primaryColor,
           ),

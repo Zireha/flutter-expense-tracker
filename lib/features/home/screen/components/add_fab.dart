@@ -29,6 +29,7 @@ class AddFab extends StatelessWidget {
           onPressed: () => showModalBottomSheet(
             context: context,
             backgroundColor: color.primaryColor,
+            isScrollControlled: true,
             builder: (BuildContext sheetContext) {
               return AddBottomSheet();
             },
