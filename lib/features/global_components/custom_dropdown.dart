@@ -66,7 +66,6 @@ class _CustomDropdownState extends State<CustomDropdown> {
           color: color.secondaryColor,
         ),
         inputDecorationTheme: InputDecorationTheme(
-          
           iconColor: color.secondaryColor,
           filled: true,
           fillColor: color.primaryColor,
