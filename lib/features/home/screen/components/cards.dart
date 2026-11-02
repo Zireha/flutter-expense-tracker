@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class Cards extends StatelessWidget {
   final Widget child;
-  const Cards({super.key, required this.child});
+  final bool isThick;
+  const Cards({super.key, required this.child, this.isThick=true});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class Cards extends StatelessWidget {
           BoxShadow(
             blurRadius: 0,
             blurStyle: BlurStyle.solid,
-            offset: Offset(4, 4),
+            offset: isThick ? Offset(6, 6) : Offset(4, 4),
             color: color.secondaryColor,
           ),
         ],

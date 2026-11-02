@@ -141,7 +141,7 @@ class AddBottomSheet extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 8),
-                    CustomDropdown(entries: categoryEntries),
+                    CustomDropdown(entries: categoryEntries, parentWidth: MediaQuery.of(context).size.width,),
                     SizedBox(height: 16),
                     // Field 4, date picker: Time Spent
                     Text(

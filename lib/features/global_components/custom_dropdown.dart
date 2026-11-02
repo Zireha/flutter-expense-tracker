@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 
 class CustomDropdown extends StatefulWidget {
   final List<String> entries;
-  const CustomDropdown({super.key, required this.entries});
+  final double parentWidth;
+  const CustomDropdown({
+    super.key,
+    required this.entries,
+    required this.parentWidth,
+  });
 
   @override
   State<CustomDropdown> createState() => _CustomDropdownState();
@@ -57,44 +62,53 @@ class _CustomDropdownState extends State<CustomDropdown> {
           ),
         ],
       ),
-      child: DropdownMenu<String>(
-        width: double.maxFinite,
-        dropdownMenuEntries: dropdownEntries,
-        trailingIcon: Icon(Icons.arrow_drop_down, color: color.secondaryColor),
-        selectedTrailingIcon: Icon(
-          Icons.arrow_drop_up,
-          color: color.secondaryColor,
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          iconColor: color.secondaryColor,
-          filled: true,
-          fillColor: color.primaryColor,
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: color.secondaryColor),
-            borderRadius: BorderRadius.circular(0),
-          ),
-        ),
-        selectOnly: true,
-        textStyle: fonts.secondaryTitle.copyWith(color: color.secondaryColor),
-        initialSelection: widget.entries.first,
-        onSelected: (String? val) {
-          // don't forget change it riverpod later
-          setState(() {
-            dropdownValueEntry = val!;
-          });
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return DropdownMenu<String>(
+            width: constraints.maxWidth,
+            dropdownMenuEntries: dropdownEntries,
+            trailingIcon: Icon(
+              Icons.arrow_drop_down,
+              color: color.secondaryColor,
+            ),
+            selectedTrailingIcon: Icon(
+              Icons.arrow_drop_up,
+              color: color.secondaryColor,
+            ),
+            inputDecorationTheme: InputDecorationTheme(
+              iconColor: color.secondaryColor,
+              filled: true,
+              fillColor: color.primaryColor,
+              border: OutlineInputBorder(
+                borderSide: BorderSide(color: color.secondaryColor),
+                borderRadius: BorderRadius.circular(0),
+              ),
+            ),
+            selectOnly: true,
+            textStyle: fonts.secondaryTitle.copyWith(
+              color: color.secondaryColor,
+            ),
+            initialSelection: widget.entries.first,
+            onSelected: (String? val) {
+              // don't forget change it riverpod later
+              setState(() {
+                dropdownValueEntry = val!;
+              });
+            },
+            menuStyle: MenuStyle(
+              alignment: Alignment.center,
+              backgroundColor: WidgetStateColor.resolveWith(
+                (_) => color.primaryColor,
+              ),
+              surfaceTintColor: WidgetStateColor.resolveWith(
+                (_) => color.secondaryColor,
+              ),
+              side: WidgetStateBorderSide.resolveWith(
+                (_) => BorderSide(color: color.secondaryColor),
+              ),
+            ),
+          );
         },
-        menuStyle: MenuStyle(
-          alignment: Alignment.center,
-          backgroundColor: WidgetStateColor.resolveWith(
-            (_) => color.primaryColor,
-          ),
-          surfaceTintColor: WidgetStateColor.resolveWith(
-            (_) => color.secondaryColor,
-          ),
-          side: WidgetStateBorderSide.resolveWith(
-            (_) => BorderSide(color: color.secondaryColor),
-          ),
-        ),
       ),
     );
   }
