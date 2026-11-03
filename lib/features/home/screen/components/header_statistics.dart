@@ -12,7 +12,7 @@ class HeaderStatistics extends StatelessWidget {
     final color = ColorTheme();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 12,
+      spacing: 20,
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
